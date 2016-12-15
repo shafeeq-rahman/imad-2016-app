@@ -12,7 +12,7 @@ var articleOne = {
   date: 'December 10',
   content: `
             <p>
-                This is the content for my first article.
+                This is the content for my first articles.
             </p>
             <p>
                 This is the content for my first article.
