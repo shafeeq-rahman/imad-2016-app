@@ -17,5 +17,5 @@ button.onclick = function(){
   };
   
   request.open('GET','http://shafeeq-rahman.imad.hausra-app.io/counter',true);
-  request.send(null);
+  
 };
