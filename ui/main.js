@@ -1,17 +1,22 @@
 console.log('Loaded!');
 
-//change the txt of the main-text div
-var element = document.getElementById('main-text');
+//counter code
+var button = document.getElementById('counter');
 
-element.innerHTML = "New Value";
-
-//move the image
-var img = document.getElementById('madi');
-var marginLeft = 0;
-function moveRight(){
-    marginLeft = marginLeft + 10;
-    img.style.marginLeft = marginLeft + 'px';
-}
-img.onclick = function () {
-    var interval = setInterval(moveRight,100);
+button.onclick = function(){
+  
+  var request = new XMLhttpRequest();
+  
+  request.onreadystatechange = function(){
+    if(request.readystate === XMLhttpRequest.DONE){
+        if(request.status === 200){
+            var counter = request.responseText;
+            var span = document.getElementById('count');
+            span.innerHTML = counter.toString();
+        }
+    }  
+  };
+  
+  request.open('GET','http://shafeeq-rahman.imad.hausra-app.io',true);
+  request.send(null);
 };
