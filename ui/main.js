@@ -19,3 +19,18 @@ button.onclick = function(){
   request.open('GET','http://shafeeq-rahman.imad.hasura-app.io/counter',true);
   request.send(null);
 };
+
+//submit name
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getElementbyId('submit_btn');
+submit.onclick = function(){
+  var names = ['Name1','Name2','Name3','Name4'];
+  var list = '';
+  for(var i=0; i<names.length;i++){
+      list += '<li>' + names[i] + '</li>';
+  }
+  var ul = document.getElementById('namelist');
+  ul.innerHTML = list;
+  
+};
